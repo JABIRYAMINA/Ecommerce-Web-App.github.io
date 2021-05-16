@@ -16,78 +16,83 @@
 </head>
 
 <body>
-  <header> 
-  <nav class="navbar navbar-expand-lg navbar-light my-bg fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand text-white" href="#">
-        <img src="images/logo.jpg" height="60px" width="75px">
-        Emma cosmétiques
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarRightAlignExample"
-        aria-controls="#navbarRightAlignExample" aria-expanded="false" aria-label="Toggle navigation">
-        <span><i id="bar" class="fa fa-bars"></i></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarRightAlignExample">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-          <li class="nav-item">
-            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">A propos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">Shop</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link text-white" href="#">Contact</a>
-          </li>
-          <li class="nav-item">
-            <i class="fa fa-search"></i>
-            <i class="fa fa-shopping-bag"></i>
-          </li>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light my-bg fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">
+          <img src="images/logo.jpg" height="60px" width="75px">
+          Emma cosmétiques
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarRightAlignExample"
+          aria-controls="#navbarRightAlignExample" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i id="bar" class="fa fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">A propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Shop</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link text-white" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <i class="fa fa-search"></i>
+              <i class="fa fa-shopping-bag"></i>
+            </li>
 
 
+        </div>
       </div>
-    </div>
-  </nav>
-</header> 
+    </nav>
+  </header>
 
-<main>
- 
-<div class="wrapper rounded d-flex align-items-stretch" >
-  <div class="bg-rose py-5 mt-5">
-      <div class="text-white"><span class="fa fa-envelope"></span> </div>
-      <div class="pt-5 cursive"> Please describe your product idea in a nutshell </div>
-      <div class="pt-sm-5 pt-5 cursive mt-sm-5">We need your email to reach you back</div>
-  </div>
-  <div class="contact-form">
-      <h3 class="contact-form">Contact</h3>
-      <form>
-          <div class="form-group pt-3"> <label for="message">Message</label> <textarea name="message" class="form-control" required></textarea> </div>
+  <section>
+
+    <div class="wrapper rounded d-flex align-items-stretch">
+      <div class="bg-rose py-5 mt-5">
+        <div class="text-white"><span class="fa fa-envelope"></span> </div>
+        <div class="pt-5 cursive"> Please describe your product idea in a nutshell </div>
+        <div class="pt-sm-5 pt-5 cursive mt-sm-5">We need your email to reach you back</div>
+      </div>
+      <div class="contact-form">
+        <h3 class="contact-form">Contact</h3>
+        <form>
+          <div class="form-group pt-3"> <label for="message">Message</label> <textarea name="message"
+              class="form-control" required></textarea> </div>
           <div class="d-flex align-items-center flex-wrap justify-content-between pt-4">
-              <div class="form-group pt-lg-2 pt-3"> <label for="name">Your Name</label> <input type="text" name="name" class="form-control" required> </div>
-              <div class="form-group pt-lg-2 pt-3"> <label for="name">Your Email</label> <input type="email" name="email" class="form-control" required> </div>
+            <div class="form-group pt-lg-2 pt-3"> <label for="name">Your Name</label> <input type="text" name="name"
+                class="form-control" required> </div>
+            <div class="form-group pt-lg-2 pt-3"> <label for="name">Your Email</label> <input type="email" name="email"
+                class="form-control" required> </div>
           </div>
           <div class="d-flex align-items-center flex-wrap justify-content-between pt-lg-5 mt-lg-4 mt-5">
-             
-              <div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Envoyer </div>
+
+            <div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Envoyer </div>
           </div>
-      </form>
-  </div>
-</div> <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
+        </form>
+      </div>
+    </div> <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="myModalLabel">Thank You <span class="fas fa-heart"></span> </h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="myModalLabel">Thank You <span class="fas fa-heart"></span> </h5> <button
+              type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-              <div class="ps-2">Thank You for sharing your views with us. We will get back to you as soon as possible.</div>
+            <div class="ps-2">Thank You for sharing your views with us. We will get back to you as soon as possible.
+            </div>
           </div>
+        </div>
       </div>
-  </div>
-</div>
-</main>
+    </div>
+  </section>
 
   <!--footer-->
 
@@ -134,20 +139,9 @@
   <!-- Fin Footer -->
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-    integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
-    crossorigin="anonymous"></script>
+    integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-    integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
-    crossorigin="anonymous"></script>
+    integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 </body>
 
 </html>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
-crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
-crossorigin="anonymous"></script>
-</body>
-
-</html>        

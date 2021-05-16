@@ -8,13 +8,15 @@ body{
 .single-item:hover,
 .single-item:focus,
 .single-item:active{
-    transform: translateY(-2px);}
+    transform: translateY(-2px);
+    border:none;}
 
 .single-item:hover:before,
 .single-item:focus:before,
 .single-item:active:before{
     opacity: 1;
     transform: translateY(5px);
+   
 
 }
 /*imageproduits*/
@@ -22,6 +24,7 @@ body{
     position: relative;
     overflow: hidden;
     cursor: pointer;
+ 
 }
 
 .img-container:hover,
@@ -29,6 +32,7 @@ body{
 .img-container:active{
   
     transform: scale(1.2);
+  
 }
 /*card*/
 .weight {
@@ -329,7 +333,7 @@ button:hover{
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Kalam&display=swap');
 
 main{
-    background: url(..//images/contact.jpg) no-repeat;
+    background: url(..//images/slide.web) no-repeat;
     width:100%;
     height: 100vh;
     background-size: cover;
@@ -450,6 +454,40 @@ main{
     background-color:rgb(88, 87, 87);
   
 }
+.espace{
+    margin-top:-13%;
+    background-image: url(..//images/33.jpg);
+}
+.shop1{
+    margin-top:-13%;
+    background-image: url(..//images/22.jpg); 
+}
+.shop2{
+    margin-top:-13%;
+    background-image: url(..//images/55.jpg); 
+}
+
+.single-second:hover,
+.single-second:focus,
+.single-second:active{
+    transform: translateY(2px);
+    border:none;}
 
 
+
+.second{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+ 
+}
+
+.second:hover,
+.second:focus,
+.second:active{
+  
+    transform:scale(1.62);
+
+  
+}
 
