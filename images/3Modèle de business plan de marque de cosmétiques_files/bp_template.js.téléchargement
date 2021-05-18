@@ -1,0 +1,35 @@
+    function togglePagination(){
+      if ($("#pages div:visible").next().length == 0){
+        $("#next").hide();
+      }else{
+        $("#next").show();
+      }
+      if ($("#pages div:visible").prev().length == 0){
+        $("#prev").hide();
+      }else{
+        $("#prev").show();
+      }
+    }  
+  
+  $(document).ready(function(){
+    addToAdwRemarketingList('AW-981464905/lM2vCMKik3oQye7_0wM');
+    $("#pages div").each(function(e) {
+        if (e != 0){$(this).hide();}           
+    });
+    togglePagination();
+  
+    $("#next").click(function(){
+       if ($("#pages div:visible").next().length != 0){
+          $("#pages div:visible").next().show().prev().hide(); 
+       }
+       togglePagination();
+       return false;
+    });
+    $("#prev").click(function(){
+        if ($("#pages div:visible").prev().length != 0){
+          $("#pages div:visible").prev().show().next().hide();  
+        }
+        togglePagination();
+        return false;
+    });
+});

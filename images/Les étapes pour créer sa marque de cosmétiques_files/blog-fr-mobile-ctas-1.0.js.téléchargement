@@ -1,0 +1,54 @@
+
+  $(document).ready(function(){ 
+  
+  if( _tbps_pv_evt_pageType === 'ARTICLE' ){
+  
+  	if(_tbps_mobile_cta === 'TRIAL'){
+	   
+	    var h2s = document.getElementsByTagName('h2');
+	    var count= h2s.length;
+	  
+	    // Insert CTA 1 before 2nd H2
+	    var cta1 = document.createElement("DIV"); 
+	    cta1.innerHTML ="<div class=\"tbps__blog__menu tbps__blog__menu--light z-depth-1 visible-xs visible-sm\" style=\"width: 90%;\"><div class=\"row\"><div class=\"col-md-6 col-xs-12\"><p class=\"h2\" style=\"margin-top: 10px;\">Faites votre business plan en ligne!</p><p class=\"marginBottom20px\">Vérifiez que votre idée de création d'entreprise peut-être rentable à l'aide d'un business plan</p></div><div class=\"col-md-6 col-xs-12\"><img data-src=\"https://ad962edbae8ba7b03b7f-d10007df79b5b7a4e475a291e50a08cf.ssl.cf3.rackcdn.com/features/logiciel-home/logiciel-business-plan-en-ligne.png\" width=\"300px\" class=\"lazy img-responsive center-block marginBottom20px\" alt=\"business plan en ligne\"></div></div><div class=\"row\"><div class=\"col-md-6 col-xs-12\"><a href=\"/france/accueil\" class=\"btn btn-warning btn-block btn-responsive z-depth-1 marginBottom20px\" style=\"color:white;font-size: 20px;width: 100%;\">Essai gratuit <i class=\"glyphicon glyphicon-chevron-right\"></i></a></div></div></div>";
+	    h2s[1].parentElement.insertBefore(cta1, h2s[1]);
+	
+	    // Insert CTA 2 before 5th H2
+	    if(count>=5){
+	      var cta2 = document.createElement("DIV"); 
+	      cta2.innerHTML ="<div class=\"tbps__blog__menu tbps__blog__menu--light z-depth-1 visible-xs visible-sm\" style=\"width: 90%;\"><div class=\"row\"><div class=\"col-md-6 col-xs-12\"><p class=\"h2\" style=\"margin-top: 10px;\">Ne partez pas d'une feuille blanche!</p><p class=\"marginBottom20px\">Plus de 50 modèles de business plan pour vous inspirer et vous guider dans la rédaction</p></div><div class=\"col-md-6 col-xs-12\"><img data-src=\"https://ad962edbae8ba7b03b7f-d10007df79b5b7a4e475a291e50a08cf.ssl.cf3.rackcdn.com/tbps-shared/modeles-business-plan-cta.png\" width=\"300px\" class=\"lazy img-responsive center-block marginBottom20px\" alt=\"modèles de business plan\"></div></div><div class=\"row\"><div class=\"col-md-6 col-xs-12\"><a href=\"/fr/modele-business-plan\" class=\"btn btn-warning btn-block btn-responsive z-depth-1 marginBottom20px\" style=\"color:white;font-size: 20px;width: 100%;\">Découvrir les modèles <i class=\"glyphicon glyphicon-chevron-right\"></i></a></div></div></div>";
+	      h2s[4].parentElement.insertBefore(cta2, h2s[4]);  
+	      
+	    }
+	
+	    // Insert CTA 3 before last H2
+	    if(count>=8){
+	      var cta3 = document.createElement("DIV"); 
+	      cta3.innerHTML ="<div class=\"tbps__blog__menu tbps__blog__menu--light z-depth-1 visible-xs visible-sm\" style=\"width: 90%;\"><div class=\"row\"><div class=\"col-md-6 col-xs-12\"><p class=\"h2\" style=\"margin-top: 10px;\">Faites votre business plan en ligne!</p><p class=\"marginBottom20px\">Impressionez vos partenaires financiers avec un business plan professionnel</p></div><div class=\"col-md-6 col-xs-12\"><img data-src=\"https://ad962edbae8ba7b03b7f-d10007df79b5b7a4e475a291e50a08cf.ssl.cf3.rackcdn.com/features/logiciel-home/logiciel-business-plan-en-ligne.png\" width=\"300px\" class=\"lazy img-responsive center-block marginBottom20px\" alt=\"business plan en ligne\"></div></div><div class=\"row\"><div class=\"col-md-6 col-xs-12\"><a href=\"/france/accueil\" class=\"btn btn-warning btn-block btn-responsive z-depth-1 marginBottom20px\" style=\"color:white;font-size: 20px;width: 100%;\">Essai gratuit <i class=\"glyphicon glyphicon-chevron-right\"></i></a></div></div></div>";
+	      h2s[count-1].parentElement.insertBefore(cta3, h2s[count-1]);  
+	      
+	    }  	
+  	}else if (_tbps_mobile_cta === 'USER'){
+	   
+	    var h2s = document.getElementsByTagName('h2');
+	    var count= h2s.length;
+	  
+	    // Insert CTA 1 before 2nd H2
+	    var cta1 = document.createElement("DIV"); 
+	    cta1.innerHTML ="<div class=\"tbps__blog__menu tbps__blog__menu--light z-depth-1 visible-xs visible-sm\" style=\"width: 90%;\"><div class=\"row\"><div class=\"col-md-6 col-xs-12\"><p class=\"h2\" style=\"margin-top: 10px;\">Ne partez pas d'une feuille blanche!</p><p class=\"marginBottom20px\">Plus de 50 modèles de business plan pour vous inspirer et vous guider dans la rédaction</p></div><div class=\"col-md-6 col-xs-12\"><img data-src=\"https://ad962edbae8ba7b03b7f-d10007df79b5b7a4e475a291e50a08cf.ssl.cf3.rackcdn.com/tbps-shared/modeles-business-plan-cta.png\" width=\"300px\" class=\"lazy img-responsive center-block marginBottom20px\" alt=\"modèles de business plan\"></div></div><div class=\"row\"><div class=\"col-md-6 col-xs-12\"><a href=\"/fr/modele-business-plan\" class=\"btn btn-warning btn-block btn-responsive z-depth-1 marginBottom20px\" style=\"color:white;font-size: 20px;width: 100%;\">Découvrir les modèles <i class=\"glyphicon glyphicon-chevron-right\"></i></a></div></div></div>";
+	    h2s[1].parentElement.insertBefore(cta1, h2s[1]);
+	
+	    // Insert CTA 2 before 5th H2
+	    if(count>=5){
+	      var cta2 = document.createElement("DIV"); 
+	      cta2.innerHTML ="<div class=\"tbps__blog__menu tbps__blog__menu--light z-depth-1 visible-xs visible-sm\" style=\"width: 90%;\"><div class=\"row\"><div class=\"col-md-6 col-xs-12\"><p class=\"h2\" style=\"margin-top: 10px;\">Ne partez pas d'une feuille blanche!</p><p class=\"marginBottom20px\">Plus de 50 modèles de business plan pour vous inspirer et vous guider dans la rédaction</p></div><div class=\"col-md-6 col-xs-12\"><img data-src=\"https://ad962edbae8ba7b03b7f-d10007df79b5b7a4e475a291e50a08cf.ssl.cf3.rackcdn.com/tbps-shared/modeles-business-plan-cta.png\" width=\"300px\" class=\"lazy img-responsive center-block marginBottom20px\" alt=\"modèles de business plan\"></div></div><div class=\"row\"><div class=\"col-md-6 col-xs-12\"><a href=\"/fr/modele-business-plan\" class=\"btn btn-warning btn-block btn-responsive z-depth-1 marginBottom20px\" style=\"color:white;font-size: 20px;width: 100%;\">Découvrir les modèles <i class=\"glyphicon glyphicon-chevron-right\"></i></a></div></div></div>";
+	      h2s[4].parentElement.insertBefore(cta2, h2s[4]);    
+	    }
+	  	
+  	}
+
+      
+  }
+
+  
+  }); // End doc ready
