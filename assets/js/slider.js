@@ -1,5 +1,5 @@
 var i = 0;
-var slideimage =["images/1.jpg","images/3.jpg"];
+var slideimage =["assets/images/1.jpg","assets/images/30.jpg","assets/images/12.jpg"];
 
 
 var slideShow = function(){
