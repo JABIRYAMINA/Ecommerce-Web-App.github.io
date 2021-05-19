@@ -6,7 +6,7 @@ include_once('connect.php');
 $tpl = '..//includes/templates/';  
 
 //directory css
-$css = '..//layout/css/';  
+$css = '..//admin/Layout/login.css';  
 $style = '..//layout/';
   
 //directory js  

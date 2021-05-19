@@ -23,7 +23,7 @@ body{
 }
 form{
     width:360px;
-    margin:8% auto;
+    margin:9% auto;
     font-family:'Times New Roman', Times, serif;
 }
 form h2{
@@ -79,7 +79,7 @@ a{
 
 }
 a:hover{
-    color:#598af3;
+    color:#4c80f1;
 }
 .btn-secondary{
     display:block;

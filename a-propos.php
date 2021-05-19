@@ -4,7 +4,7 @@ include_once("includes/templates/header.php")
 
 ?>       
       <div class="container-fluid">
-          <img src="images/1.jpg" class="image">
+          <img src="assets/images/best-makeup-2017.webp" class="image">
           <h2 class="text-lg-center py-md-4 bg-light top-50">A PROPOS</h2>
          
       </div>  
@@ -14,7 +14,7 @@ include_once("includes/templates/header.php")
             <div class="container border-5">
               <div class="row align-items-center">
                 <div class="col-lg-5 text-center">
-                  <img src="images/maquillage-yeux-beaute-large.jpg" width="450" height="150"
+                  <img src="assets/images/maquillage-yeux-beaute-large.jpg"" width="450" height="150"
                     class="img-fluid watch-img">
                 </div>
                 <div class="col-lg-7 text-lg-right text-center text-color about-text">
@@ -51,7 +51,7 @@ include_once("includes/templates/header.php")
                     page de texte, comme Aldus PageMaker.</p>
                 </div>
                 <div class="col-lg-5 text-center">
-                    <img src="images/maquillage-yeux-beaute-large.jpg" width="450" height="150"
+                    <img src="assets/images/maquillage-yeux-beaute-large.jpg" width="450" height="150"
                       class="img-fluid watch-img">
                   </div>
                 </div>

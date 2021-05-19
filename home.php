@@ -13,7 +13,7 @@ include_once("includes/templates/header.php")
       <img class="img-fluid col-lg-3 col-md-4 col-6 mx-auto" src="assets/images/GIORDANI_GOLD_jpg.jpg">
     </div>
     <div class="row text-center" id="description">
-      <p class="col-lg-3 col-md-4 col-6 mx-auto">OnColour
+      <p class="col-lg-3 col-md-4 col-6 mx-auto">
         OnColour est une marque de maquillage irrésistible avec une large gamme de couleurs vives qui met en valeur
         instantanément votre look. Obtenez OnColour - elle est facile à utiliser et facile à aimer !</p>
       <p class="col-lg-3 col-md-4 col-6 mx-auto">Optimals

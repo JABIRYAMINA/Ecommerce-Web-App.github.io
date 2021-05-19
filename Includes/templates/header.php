@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,11 +56,12 @@
             <a class="nav-link text-white" href="signup.php">Inscrire</a>
           </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="login.php">Login</a>
+            <a class="nav-link text-white" href="admin/login.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="checkout.php">Mon compte</a>
+            <a class="nav-link text-white" href="logout.php">logout</a>
           </li>
+         
           <li class="nav-item">
             <div class="navbar-collapse collapse right">
               <a href="#" data-bs-toggle="collapse" data-bs-target="#search">
