@@ -1,5 +1,5 @@
 <?php
-include_once("includes/templates/header.php")
+include_once($tpl ."header.php");
 
 ?>
 <main class="espace">
@@ -135,6 +135,6 @@ include_once("includes/templates/header.php")
     
   </section>
  <?php
-include_once("includes/templates/footer.php")
+include_once($tpl ."footer.php");
 
 ?>

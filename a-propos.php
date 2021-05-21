@@ -1,6 +1,6 @@
 
  <?php
-include_once("includes/templates/header.php")
+include_once($tpl ."header.php");
 
 ?>       
       <div class="container-fluid">
@@ -60,6 +60,6 @@ include_once("includes/templates/header.php")
 
 
 <?php
-include_once("includes/templates/footer.php")
+include_once($tpl ."footer.php");
 
 ?>

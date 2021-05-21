@@ -3,8 +3,8 @@
 server with default setting (user 'root' with no password) */
 $servername = "localhost";
 $username = "root";
-$password = "admin";
-$dbname = "blogtech";
+$password = "";
+$dbname = "ecommerce-web-app";
 
 try {
     $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

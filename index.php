@@ -1,10 +1,13 @@
+
+<?php include('./includes/init.php');?>
 <?php
-include_once("includes/templates/header.php")
+include_once($tpl ."header.php");
+include_once($tpl ."connect.php");
 
 ?>
   <img name="slideshow" class="container-fluid py-5 slider ">
  
-  <!--sectionindia-->
+  <!--fin description-->
 
   <section id="brand">
     <div class="row m-5 py-5">
@@ -29,36 +32,33 @@ include_once("includes/templates/header.php")
 
 
 
-  <!--endsectionindia-->
+  <!--fin description-->
 
   <!--nouveau produit-->
   <section id="new" class="w-100">
     <div class="row p-0 m-0 mt-5">
       <h1 class="text-center">Latest product</h1>
+      <?php
+            $sql = "SELECT * FROM products ORDER BY id DESC LIMIT 0, 3";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            while ($products = $stmt->fetch(PDO::FETCH_ASSOC)) :
+                $product_id = $products['id'];
+                $product_title = $products['name'];
+                $product_detail = substr($products['description'], 0, 140);
+                $product_image = $products['picture'];
+                $product_price = $products['price'];
+        ?>
       <div class="one col-lg-4 col-md-12 col-12 p-0">
-        <img class="img-fluid" src="assets/images/PARFUM/Eau de Parfum Amber Elixir Mystery.Jpeg" alt="">
+        <img class="img-fluid" src="assets/images/PARFUM/Eau de Parfum Amber Elixir Mystery.Jpeg" name="images"alt="">
         <div class="details">
-          <h2>Eau de Parfum Amber</h2>
-          <p></p>
-          <button class="text-capitalize">shop now</button>
+          <h2><?php echo $product_title; ?></h2>
+          <p><?php echo $product_detail; ?></p>
+          <button class="text-capitalize">Acheter</button>
         </div>
       </div>
-      <div class="one col-lg-4 col-md-12 col-12 p-0">
-        <img class="img-fluid" src="assets/images/PARFUM/Eau de Parfum Love Potion Midnight Wish.Jpeg" alt="">
-        <div class="details">
-          <h2>Eclat Mon Parfum</h2>
-          <p></p>
-          <button class="text-capitalize">shop now</button>
-        </div>
-      </div>
-      <div class="one col-lg-4 col-md-12 col-12 p-0">
-        <img class="img-fluid" src="assets/images/PARFUM/Eclat Mon Parfum.Jpeg" alt="">
-        <div class="details">
-          <h2>Eau de Parfum Love Potion</h2>
-          <p></p>
-          <button class="text-capitalize">shop now</button>
-        </div>
-      </div>
+        <?php endwhile; ?>
+
     </div>
 
   </section>
@@ -80,7 +80,7 @@ include_once("includes/templates/header.php")
         </div>
         <h5 class="p-name">support boots</h5>
         <h4 class=p-price>92 DH</h4>
-        <button class="buy-btn">by now</button>
+        <button class="buy-btn">Decouvrir</button>
       </div>
       <div class="product text-center col-lg-3 col-md-4 col-12">
         <img class="img-fluid mb-3" src="assets/images/creme/Lotion Gel Anti Âge Intense pour le Visage NovAge Men.Jpeg" alt="">
@@ -91,9 +91,9 @@ include_once("includes/templates/header.php")
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
         </div>
-        <h5 class="p-name">support boots</h5>
+        <h5 class="p-name"></h5>
         <h4 class=p-price>92 DH</h4>
-        <button class="buy-btn">by now</button>
+        <button class="buy-btn">Decouvrir</button>
       </div>
       <div class="product text-center col-lg-3 col-md-4 col-12">
         <img class="img-fluid mb-3" src="assets/images/creme/Crème pour la Peau Sensible du Corps et du Visage Sun 360 IP 50.Jpeg" alt="">
@@ -106,7 +106,7 @@ include_once("includes/templates/header.php")
         </div>
         <h5 class="p-name">support boots</h5>
         <h4 class=p-price>92 DH</h4>
-        <button class="buy-btn">by now</button>
+        <button class="buy-btn">Decouvrir</button>
       </div>
       <div class="product text-center col-lg-3 col-md-4 col-12">
         <img class="img-fluid mb-3" src="assets/images/creme/Lotion Matifiante pour le Visage Love Nature à l'Extrait d'Arbre.Jpeg" alt="">
@@ -119,7 +119,7 @@ include_once("includes/templates/header.php")
         </div>
         <h5 class="p-name">support boots</h5>
         <h4 class=p-price>92 DH</h4>
-        <button class="buy-btn">by now</button>
+        <button class="buy-btn">Decouvrir</button>
       </div>
     </div>
   </section>
@@ -132,8 +132,4 @@ include_once("includes/templates/header.php")
     </div>
   </section>
 
-  <?php
-include_once("includes/templates/footer.php")
-
-?>
-
+  <?php include_once($tpl ."footer.php"); ?>
