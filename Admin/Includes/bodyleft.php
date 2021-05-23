@@ -1,7 +1,7 @@
 
 
 <div class="bodyleft">
-    <h3>Content management</h3>
+    <h3>gestion admin</h3>
     <ul>
         <li><a href="index.php">Home</a></li>
         <li><a href="index.php?viewall_cat">View all categories</a></li>
