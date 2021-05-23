@@ -25,7 +25,7 @@ function viewAllCat(){
         echo "<tr>
               <td>".$i++."</td>
               <td>".$row['name']."</td>
-              <td><a href='#'>Edit</a></td>
+              <td><a href='index.php?edit_cat=".$row['id']."'>Edit</a></td>
               <td><a href='#'>Delete</a></td>
               </tr>";
     
@@ -55,6 +55,26 @@ function viewAllProducts(){
     endwhile;
 
 
+}
+function edit_cat(){
+    include_once('includes/connect.php');
+    if(isset($_GET['edit_cat'])) {
+        $cat_id=$_GET['edit_cat'];
+        $fetch_cat_name=$pdo->prepare("SELECT * FROM categories WHERE id=$cat_id");
+        $fetch_cat_name->setFetchMode(PDO:: FETCH_ASSOC);
+        $fetch_cat_name->execute();
+        $row=$fetch_cat_name->fetch();
+        echo "<form method='POST'>
+    <table>
+        <tr>
+            <td>Entrer categorie name:</td>
+            <td><input type='texte' name='name' value='".$row['name']."' /></td>
+        </tr>
+    </table>
+    <button class='btn btn-secondary' name='update_cat' >update catégories</button>
+</form>";
+
+    }
 }
 
 ?>

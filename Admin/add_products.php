@@ -58,7 +58,7 @@ include_once('includes/connect.php');
         if($fileSize <1000000){
           $fileNameNew =uniqid('', true).".".$fileActext;
           $fileDestination= 'uploads/'.$fileNameNew;
-          move_uploaded_file($fileTmpName,   $fileDestination);
+          move_uploaded_file($fileTmpName, $fileDestination);
           header('location:produits.php?uploadsuccess');
 
         }else{

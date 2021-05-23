@@ -6,6 +6,10 @@ if(!isset($_GET['view_allproducts'])){
     
     ?>
 <div class="bodyright">
-
+    <?php 
+        if(isset($_GET['edit_cat'])) {
+            include("edit_cat.php");
+        } 
+    ?>
 </div>
 <?php } } } ?>
