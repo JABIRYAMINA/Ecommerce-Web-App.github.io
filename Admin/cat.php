@@ -2,7 +2,7 @@
 
 <div class="">
 <h3>voir tous les categories</h3>
-<form action="" method="POST" enctype="multipart/form-data">
+<form id="ad_cat" action="" method="POST" enctype="multipart/form-data">
     <table>
     <tr>
         <th>number</th>

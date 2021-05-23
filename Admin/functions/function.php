@@ -20,9 +20,14 @@ function viewAllCat(){
     $fetch_cat=$pdo->prepare("SELECT * FROM categories"); 
     $fetch_cat->setFetchMode(PDO::FETCH_ASSOC);
     $fetch_cat->execute();
+    $i=1;
     while($row= $fetch_cat->fetch()): 
-        echo "<td></td>
-              <td>".$row['name']."</td>";
+        echo "<tr>
+              <td>".$i++."</td>
+              <td>".$row['name']."</td>
+              <td><a href='#'>Edit</a></td>
+              <td><a href='#'>Delete</a></td>
+              </tr>";
     
     endwhile;
     
