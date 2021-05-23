@@ -1,26 +1,4 @@
-<?php
-function ajouter_cat(){
-    include_once('includes/connect.php');
-    if(isset($_POST['ajouter_cat'])){
-   $name=$_POST['name'];
-        $ajouter_cat=$pdo->prepare("INSERT INTO categories(name) VALUES('$name')");
-        if($ajouter_cat->execute()) {
-    echo "<script>alert('catégorie ajouter avec succés');</script>";
-}
-else{
-    echo "<script>alert('catégorie non ajouter');</script>";
-}
-    }
-
-
-}  
-
-
-
-
-
-//images uploads
-function upload(){
+<?php 
  if(isset($_POST['submit'])){
      $file = $_FILES['file'];
      
@@ -56,7 +34,5 @@ function upload(){
 
  }
 
-}
+
 ?>
-
-

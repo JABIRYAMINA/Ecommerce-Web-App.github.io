@@ -1,23 +1,21 @@
 
 
-
-
-<div class="container-fluid">
-<div id="header">
-    <h2>Gestion</h2>
+<div class="bodyleft">
+    <h3>Content management</h3>
     <ul>
-        <li><a href="index.php">Index</a></li>
-        <li><a href="index.php?voir_tt_cat">tout les categorie</a></li>
-        <li><a href="index.php?voir_tt_produit">sub all produit</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="index.php?viewall_cat">View all categories</a></li>
+        <li><a href="index.php?viewall_prod">View all producs</a></li>
+      
        
     </ul>
-    </div>
-</div><!--fin containerfluid-->
+
+</div>
 <?php
-if(isset($_GET['voir_tt_cat'])){
-include("cat.php");
+if(isset($_GET['viewall_cat'])){
+    include('cat.php');
 }
-if(isset($_GET['voir_tt_produit'])){
-    include("produits.php");
+if(isset($_GET['viewall_prod'])){
+    include('produits.php');
 }
 ?>

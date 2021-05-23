@@ -1,48 +1,32 @@
 <?php
 session_start();
+include_once("../includes/header.php");
+include_once("../includes/connect.php");
 
+//check if user comming from HTTP post request
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $username = $_POST['user'];
+    $password = $_POST['pass'];
+    $hashedass = md5($password);
+    
+    //check if userexist in database
+  $stmt = $pdo->prepare("SELECT username,password FROM admins WHERE username = ? AND password = ?");
+  $stmt->execute(array($username, $hashedass));
+//
+$_SESSION['username'] = $username; //register session
+header('location:dashboard.php')
 
-if(isset($_POST['submit'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    if($username&&$password){
-        if($username==$user&&$password==$pass){
-            
-            $_SESSION['username']=$username;
-           header('location:admin.php');
 
         
       
-    }else{
-        echo 'identifiants errones';
-    }
-}else{
-    echo 'remplir';
-}
+ 
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--Bootstrap-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..//admin/Layout/login.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <title>Home</title>
-
-</head>
-
-<body>
 
     <div class=container>
-        <form class="mt-2" action="login.php" method="POST">
+        <form class="mt-2" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
             <img class="avatar" src="..//assets/images/login.jpg">
             <h2 class="text-center">Admin</h2>
             <div class="input-div">
@@ -51,7 +35,7 @@ if(isset($_POST['submit'])){
                 </div>
                 <div>
                     <label>Username</label>
-                    <input type="text" name="username" placeholder="Votre nom" autocomplete="off" required>
+                    <input type="text" name="user" placeholder="Votre nom" autocomplete="off" required>
                 </div>
             </div>
             <div class="input-div deux">
@@ -60,7 +44,7 @@ if(isset($_POST['submit'])){
                 </div>
                 <div>
                     <label>Password</label>
-                    <input type="password" name="password" placeholder="Mot de passe" autocomplete="new-password"
+                    <input type="password" name="pass" placeholder="Mot de passe" autocomplete="new-password"
                         required>
                 </div>
             </div>
@@ -72,3 +56,4 @@ if(isset($_POST['submit'])){
         </form>
     </div>
     </div>
+<?php include_once("../includes/header.php");?>

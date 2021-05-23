@@ -4,7 +4,7 @@ $con='connect.php';
   
 //directory css
  
-$style = '..//layout/';
+$style = '..//layout';
   
 //directory js  
 $js = '..//layout/js/';  

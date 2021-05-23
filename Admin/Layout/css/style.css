@@ -2,12 +2,45 @@
     padding:0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    background-color: pink;
+    
+}
+.header{
+    background-color: rosybrown;
+    max-width: 100%;
+    height: 5rem;
 }
 
-#header{
+
+.bodyleft{
     float:left;
-    width:24%;
+    width:20rem;
     height:500px;
-    background-color: pink;
-    margin-top:5%;
+    background-color: #900f90;
+    margin:20px;
+    border-radius:10px;
+    color: white;
+    
+}
+li{
+    list-style-type: none;
+    
+}
+li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: whitesmoke;
+}
+.bodyright{
+    float:left;
+    width:70rem;
+    height:500px;
+    background-color:rgb(223, 191, 196);
+    border-radius:30px;
+    margin:-31rem 10px 10px 350px;
+
+   
 }

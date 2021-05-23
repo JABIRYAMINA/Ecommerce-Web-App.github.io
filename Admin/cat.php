@@ -1,8 +1,8 @@
 
 
-<div class="container">
+<div class="">
 <h3>Ajouter  catégoris</h3>
-<form method="POST" action="">
+<form method="POST">
     <table>
         <tr>
             <td>Entrer categorie name:</td>
@@ -13,14 +13,7 @@
 </form>
 </div>
 
-<?php include_once('includes/connect.php');
-    if(isset($_POST['ajouter_cat'])){
-        $name=$_POST['name'];
-$ajouter_cat=$pdo->prepare("INSERT INTO categories(name) VALUES('$name')");
-if($ajouter_cat->execute()) {
-    echo "<script>alert('catégorie ajouter avec succés');</script>";
-}else{
-    echo "<script>alert('catégorie non ajouter');</script>";
-}
-    }
+
+<?php include('functions/function.php'); 
+echo ajouter_cat();
 ?>
