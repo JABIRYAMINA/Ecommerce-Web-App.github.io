@@ -14,7 +14,6 @@ else{
 
 
 }  
-
 function viewAllCat(){
     include_once('includes/connect.php');
     $fetch_cat=$pdo->prepare("SELECT * FROM categories"); 
@@ -81,16 +80,6 @@ function edit_cat(){
 
     }
 }
-function edit_products(){
-     include_once('includes/connect.php');
-        if(isset($_GET['edit_product'])) {
-            $pro_id=$_GET['edit_product'];
-            $fetch_pro=$pdo->prepare("SELECT * FROM products WHERE id='$pro_id'");
-            $fetch_pro->setFetchMode(PDO:: FETCH_ASSOC);
-            $fetch_pro->execute();
-            $row= $fetch_pro->fetch();
-         
-}
-}
+
 ?>
 
