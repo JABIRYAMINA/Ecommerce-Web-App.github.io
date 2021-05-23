@@ -51,7 +51,7 @@ include_once('includes/connect.php');
      $fileType =$_FILES['file']['type'];
      $fileExt= explode('.',  $fileName);
      $fileActext= strtolower(end($fileExt));
-     $allowed= array('jpg','jpeg','png','png');
+     $allowed= array('jpg','jpeg','png','pdf');
 
      if(in_array($fileActext, $allowed)){
        if($fileError === 0){
