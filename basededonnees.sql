@@ -11,7 +11,15 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+-- Listage des données de la table ecommerce-web-app.admins : ~0 rows (environ)
+DELETE FROM `admins`;
+/*!40000 ALTER TABLE `admins` DISABLE KEYS */;
+INSERT INTO `admins` (`id`, `username`, `password`) VALUES
+	(1, 'amina', 'sinusite');
+/*!40000 ALTER TABLE `admins` ENABLE KEYS */;
+
 -- Listage des données de la table ecommerce-web-app.categories : ~6 rows (environ)
+DELETE FROM `categories`;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 	(12, 'Admin Panel', '2021-05-21 04:40:43', '2021-05-21 04:40:43'),
@@ -22,7 +30,28 @@ INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 	(18, 'hhh', '2021-05-22 18:13:13', '2021-05-22 18:13:13');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 
--- Listage des données de la table ecommerce-web-app.products : ~66 rows (environ)
+-- Listage des données de la table ecommerce-web-app.contact : ~0 rows (environ)
+DELETE FROM `contact`;
+/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
+
+-- Listage des données de la table ecommerce-web-app.customers : ~0 rows (environ)
+DELETE FROM `customers`;
+/*!40000 ALTER TABLE `customers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `customers` ENABLE KEYS */;
+
+-- Listage des données de la table ecommerce-web-app.orders : ~0 rows (environ)
+DELETE FROM `orders`;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+
+-- Listage des données de la table ecommerce-web-app.order_details : ~0 rows (environ)
+DELETE FROM `order_details`;
+/*!40000 ALTER TABLE `order_details` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order_details` ENABLE KEYS */;
+
+-- Listage des données de la table ecommerce-web-app.products : ~76 rows (environ)
+DELETE FROM `products`;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
 INSERT INTO `products` (`id`, `name`, `price`, `picture`, `description`, `category_id`, `created_at`, `updated_at`) VALUES
 	(1, 'parfum', 230, NULL, 'parfum ambra', NULL, '2021-05-19 10:56:08', '2021-05-19 10:56:10'),
