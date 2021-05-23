@@ -41,17 +41,13 @@ function viewAllProducts(){
     while($row=$fetch_pro->fetch()):
         echo "<tr>
             <td>".$i++."</td>
-            <td><a href='#'>Edit</a></td>
-            <td><a href='#'>Delete</a></td>
-            <td".$row['name']."</td>
-            
-            <td>
-                <img src='uploads/".$row['picture']."'/>
-            </td>
-            <td".$row['price']."</td>
-            <td>".$row['picture']."</td>
+            <td>".$row['name']."</td>
+            <td>".$row['price']."</td>
+            <td><img src='uploads/".$row['picture']."'/></td>
             <td>".$row['description']."</td>
-        </tr>";
+            <td><a href='index.php?edit_product=".$row['id']."'>Edit</a></td>
+            <td><a href='#'>Delete</a></td>
+            </tr>";
     endwhile;
 
 
@@ -60,23 +56,41 @@ function edit_cat(){
     include_once('includes/connect.php');
     if(isset($_GET['edit_cat'])) {
         $cat_id=$_GET['edit_cat'];
-        $fetch_cat_name=$pdo->prepare("SELECT * FROM categories WHERE id=$cat_id");
+        $fetch_cat_name=$pdo->prepare("SELECT * FROM categories WHERE id='$cat_id'");
         $fetch_cat_name->setFetchMode(PDO:: FETCH_ASSOC);
         $fetch_cat_name->execute();
         $row=$fetch_cat_name->fetch();
         echo "<form method='POST'>
     <table>
         <tr>
-            <td>Entrer categorie name:</td>
-            <td><input type='texte' name='name' value='".$row['name']."' /></td>
+            <td>Update categorie name:</td>
+            <td><input type='texte' name='update_cat_name' value='".$row['name']."' /></td>
         </tr>
     </table>
     <button class='btn btn-secondary' name='update_cat' >update catégories</button>
 </form>";
+        if(isset($_POST['update_cat'])){
+            $update_cat_name=$_POST['update_cat_name'];
+            $update_cat=$pdo->prepare("UPDATE categories SET name= '$update_cat_name' WHERE id='$cat_id'");
+            if($update_cat->execute()){
+                echo "<script>alert('category updated successfully');</script>";
+                echo "<script>window.open('index.php?viewall_cat','_self');</script>";
+            }
+
+        }
 
     }
 }
-
+function edit_products(){
+     include_once('includes/connect.php');
+        if(isset($_GET['edit_product'])) {
+            $pro_id=$_GET['edit_product'];
+            $fetch_pro=$pdo->prepare("SELECT * FROM products WHERE id='$pro_id'");
+            $fetch_pro->setFetchMode(PDO:: FETCH_ASSOC);
+            $fetch_pro->execute();
+            $row= $fetch_pro->fetch();
+         
+}
+}
 ?>
-
 

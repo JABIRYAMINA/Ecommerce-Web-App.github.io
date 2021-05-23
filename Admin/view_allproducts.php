@@ -7,7 +7,7 @@
             <th>product Name</th>
             <th>picture</th>
             <th>description</th>
-            <th>category_id</th>
+          
         </tr>
         <?php include('functions/function.php'); echo viewAllProducts(); ?>
     </table>
@@ -15,4 +15,4 @@
 </div>
 <?php
 
-include_once('includes/connect.php');?>
+
