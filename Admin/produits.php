@@ -27,6 +27,10 @@
             <td>Entrer product name:</td>
             <td><input type="file" name="file"></td>
         </tr>
+        <tr>
+            <td>desc:</td>
+            <td><input type="texte" name="description"></td>
+        </tr>
 </table>
     <button class="btn btn-secondary" name="add_prod" >Ajouter catégories</button>
 </form>
@@ -35,8 +39,9 @@
 
 include_once('includes/connect.php');
     if(isset($_POST['add_prod'])){
-       
+        $cat_id=$_POST['categ'];
         $name=$_POST['prod_name'];
+        
      
       $file = $_FILES['file'];//images
      $fileName =$_FILES['file']['name'];
@@ -68,7 +73,7 @@ include_once('includes/connect.php');
          echo 'bravo';
      } }//fin images
     
-     $ajouter_prod=$pdo->prepare("INSERT INTO products(name,picture) VALUES('$name','$file')");
+     $ajouter_prod=$pdo->prepare("INSERT INTO products(name,picture,category_id) VALUES('$name','$file','$cat_id')");
    if($ajouter_prod->execute()){
     echo "<script>alert('prod ajouter avec succés');</script>";
 }
