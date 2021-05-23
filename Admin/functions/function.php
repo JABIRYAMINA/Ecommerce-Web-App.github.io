@@ -30,8 +30,30 @@ function viewAllCat(){
               </tr>";
     
     endwhile;
-    
-    
+
+}
+function viewAllProducts(){
+    include_once('includes/connect.php');
+    $fetch_pro=$pdo->prepare("SELECT * FROM products");
+    $fetch_pro->setFetchMode (PDO:: FETCH_ASSOC);
+    $fetch_pro->execute();
+    $i=1;
+    while($row=$fetch_pro->fetch()):
+        echo "<tr>
+            <td>".$i++."</td>
+            <td><a href='#'>Edit</a></td>
+            <td><a href='#'>Delete</a></td>
+            <td".$row['name']."</td>
+            
+            <td>
+                <img src='uploads/".$row['picture']."'/>
+            </td>
+            <td".$row['price']."</td>
+            <td>".$row['picture']."</td>
+            <td>".$row['description']."</td>
+        </tr>";
+    endwhile;
+
 
 }
 

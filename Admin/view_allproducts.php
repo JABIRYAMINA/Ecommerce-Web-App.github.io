@@ -1,5 +1,5 @@
 <div class="container">
-<h3>Ajouter products</h3>
+<h3>view products</h3>
 <form method="POST" enctype="multipart/form-data">
     <table>
         <tr>
@@ -9,9 +9,10 @@
             <th>description</th>
             <th>category_id</th>
         </tr>
+        <?php include('functions/function.php'); echo viewAllProducts(); ?>
     </table>
 </form>
 </div>
 <?php
 
-include_once('includes/connect.php');
+include_once('includes/connect.php');?>
