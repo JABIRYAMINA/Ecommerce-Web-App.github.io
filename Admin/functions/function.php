@@ -1,29 +1,4 @@
 <?php
-//products
-function ajouter_prod(){
-    include("includes/connect.php");
-    if(isset($_POST['ajouter'])){
-    $nom=$_POST['name'];
-    $price=$_POST['price'];
-    $file=$_POST['picture'];
-    $desc=$_POST['description'];
-$add_pro=$pdo->prepare("INSERT INTO products(name,price,picture,description,category_id)VALUES('$nom','$price','$file','$desc')");        
-if($add_pro->execute()){
-    echo "<script>alert('produit ajouter');</script>";
-
-}else{
-    echo "<script>alert('produit non ajouter');</script>";
-}   
-}
-}
-
-
-
-
-
-
-
-
 
 function ajouter_cat(){
     include_once('includes/connect.php');
@@ -73,7 +48,7 @@ function viewAllProducts(){
             <td>".$i++."</td>
             <td>".$row['name']."</td>
             <td>".$row['price']."</td>
-            <td><img src='uploads/".$row['picture']."'/></td>
+            <td><img src='uploads/".$row['picture']."'alt='avatar'/></td>
             <td>".$row['description']."</td>
             <td><a href='index.php?edit_product=".$row['id']."'>Edit</a></td>
             <td><a href='#'>Delete</a></td>
@@ -111,6 +86,8 @@ function edit_cat(){
 
     }
 }
+
+//edit products
 function edit_products(){
      include_once('includes/connect.php');
         if(isset($_GET['edit_product'])) {
@@ -119,6 +96,44 @@ function edit_products(){
             $fetch_pro->setFetchMode(PDO:: FETCH_ASSOC);
             $fetch_pro->execute();
             $row= $fetch_pro->fetch();
+            $cat_id=$row['category_id'];
+            
+        
+            echo "
+            <div class='container'>
+            <h3>Ajouter products</h3>
+            <form method='POST' enctype='multipart/form-data'>
+                <table>
+                <tr>
+                        <td>categorie name:</td>
+                        <td><section name='name'>
+                        <?php include('functions/function.php'); echo viewAllCat(); ?>
+                        </section></td>
+                    </tr>
+                    <tr>
+                        <td>update product name:</td>
+                        <td><input type='texte' name='name' value='".$row['name']."'></td>
+                    </tr>
+                    <tr>
+                        <td>update  product name:</td>
+                        <td>
+                            <input type='texte' name='price' value='".$row['price']."'/>
+                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>update  product name:</td>
+                        <td><input type='file' name='picture'  
+                        <img src='uploads/".$row['picture']."'/>
+                        </td>
+                    </tr>
+                  
+                        <td>update desc:</td>
+                        <td><input type='texte' name='description' value='".$row['description']."'></td>
+                    </tr>
+            </table>
+                <button class='btn btn-secondary' name='add_prod'>modifier produit</button>
+            </form>";
          
 }
 }

@@ -18,7 +18,7 @@
         </tr>
         <tr>
             <td>Entrer product name:</td>
-            <td><input type="file" name="picture"></td>
+            <td><img src="<?php echo 'uploads/'.$row['picture'];?>"><input type="file" name="picture"></td>
         </tr>
       
             <td>desc:</td>
@@ -33,35 +33,7 @@ include('includes/connect.php');
     if(isset($_POST['add_prod'])){
     $name=$_POST['name'];
     $prix=$_POST['price'];
-   
-    $file = $_FILES['picture'];
-    $fileName =$_FILES['picture']['name'];
-    $fileTmpName =$_FILES['picture']['tmp_name'];
-    $fileSize =$_FILES['picture']['size'];
-    $fileError =$_FILES['picture']['error'];
-    $fileType =$_FILES['picture']['type'];
-    $fileExt= explode('.', $fileName);
-    $fileActext= strtolower(end($fileExt));
-    $allowed= array('jpg','jpeg','png','pdf');
-    if(in_array($fileActext, $allowed)){
-      if($fileError === 0){
-       if($fileSize <1000000){
-         $fileNameNew =uniqid('', true).".".$fileActext;
-         $fileDestination= 'uploads/'.$fileNameNew;
-         move_uploaded_file($fileTmpName,$fileDestination);
-       
-
-       }else{
-           echo 'your files is to big';
-       }
-
-
-      }else{
-          echo 'error';
-      }
-    }else{
-        echo 'bravo';
-    }
+  
     $des=$_POST['description'];
   
 
