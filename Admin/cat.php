@@ -9,9 +9,8 @@
         <th>category name</th>
         <th>edit</th>
         <th>delete</th>
-        </tr>  
-        <tr>
-            <?php include('functions/function.php'); echo viewAllCat() ?>
+       
+          
         </tr>
     </table>
 
@@ -24,11 +23,11 @@
             <td><input type="texte" name="name"></td>
         </tr>
     </table>
-    <button class="btn btn-secondary" name="ajouter_cat" >Ajouter catégories</button>
+    <button class="btn btn-secondary" name="add_cat" >Ajouter catégories</button>
 </form>
 </div>
 
 
 <?php 
-echo ajouter_cat();
+include('functions/function.php'); echo ajouter_cat();
 ?>

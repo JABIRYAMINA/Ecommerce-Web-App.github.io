@@ -1,8 +1,34 @@
 <?php
+//products
+function ajouter_prod(){
+    include("includes/connect.php");
+    if(isset($_POST['ajouter'])){
+    $nom=$_POST['name'];
+    $price=$_POST['price'];
+    $file=$_POST['picture'];
+    $desc=$_POST['description'];
+$add_pro=$pdo->prepare("INSERT INTO products(name,price,picture,description,category_id)VALUES('$nom','$price','$file','$desc')");        
+if($add_pro->execute()){
+    echo "<script>alert('produit ajouter');</script>";
+
+}else{
+    echo "<script>alert('produit non ajouter');</script>";
+}   
+}
+}
+
+
+
+
+
+
+
+
+
 function ajouter_cat(){
     include_once('includes/connect.php');
-    if(isset($_POST['ajouter_cat'])){
-   $name=$_POST['name'];
+    if(isset($_POST['add_cat'])){
+       $name=$_POST['name'];
         $ajouter_cat=$pdo->prepare("INSERT INTO categories(name) VALUES('$name')");
         if($ajouter_cat->execute()) {
     echo "<script>alert('catégorie ajouter avec succés');</script>";
@@ -13,7 +39,12 @@ else{
     }
 
 
-}  
+}
+
+ 
+
+
+
 function viewAllCat(){
     include_once('includes/connect.php');
     $fetch_cat=$pdo->prepare("SELECT * FROM categories"); 
@@ -80,6 +111,16 @@ function edit_cat(){
 
     }
 }
-
+function edit_products(){
+     include_once('includes/connect.php');
+        if(isset($_GET['edit_product'])) {
+            $pro_id=$_GET['edit_product'];
+            $fetch_pro=$pdo->prepare("SELECT * FROM products WHERE id='$pro_id'");
+            $fetch_pro->setFetchMode(PDO:: FETCH_ASSOC);
+            $fetch_pro->execute();
+            $row= $fetch_pro->fetch();
+         
+}
+}
 ?>
 
