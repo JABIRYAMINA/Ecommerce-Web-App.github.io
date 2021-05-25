@@ -1,16 +1,4 @@
 <?php
-//ajouter categories
-function ajouter_cat(){
-include_once('includes/connect.php');
-    if(isset($_POST['add_cat'])){
-    $name=$_POST['name'];
-    $ajouter_cat=$pdo->prepare("INSERT INTO categories(name) VALUES('$name')");
-    if($ajouter_cat->execute()) {
-       echo "<script>alert('catégorie ajouter avec succés');</script>";
-}
-       else{
-       echo "<script>alert('catégorie non ajouter');</script>";
-} } }//end add category
 
 //voir tous les categories 
 function viewAllCat(){
@@ -25,7 +13,7 @@ while($row= $fetch_cat->fetch()):
         <td>".$i++."</td>
         <td>".$row['name']."</td>
         <td><a href='index.php?edit_cat=".$row['id']."'>Edit</a></td>
-        <td><a href='#'>Delete</a></td>
+        <td><a href='delete_cat.php?delete_cat=".$row['id']."'>Delete</a></td>
         </tr>";
 endwhile; }//end view all category
 
@@ -77,7 +65,7 @@ if($update_cat->execute()){
 } } //end edit category
 
 //edit products
-function edit_products(){
+function edit_prod(){
      include_once('includes/connect.php');
         if(isset($_GET['edit_product'])) {
             $pro_id=$_GET['edit_product'];
@@ -85,7 +73,7 @@ function edit_products(){
             $fetch_pro->setFetchMode(PDO:: FETCH_ASSOC);
             $fetch_pro->execute();
             $row= $fetch_pro->fetch();
-            $cat_id=$row['category_id'];
+            
         echo "
            <div class='container'>
             <h3>Ajouter products</h3>
@@ -104,8 +92,7 @@ function edit_products(){
                     <tr>
                         <td>update  product name:</td>
                         <td>
-                            <input type='texte' name='price' value='".$row['price']."'/>
-                        
+                            <input type='texte' name='price' value='".$row['price']."'>
                         </td>
                     </tr>
                     <tr>
@@ -118,9 +105,33 @@ function edit_products(){
                         <td><input type='texte' name='description' value='".$row['description']."'></td>
                     </tr>
                 </table>
-                    <button class='btn btn-secondary' name='add_prod'>modifier produit</button>
+                    <button class='btn btn-secondary' name='edit_product'>modifier produit</button>
             </form>";
+            if(isset($_POST['edit_product'])){
+                $update_pro=$_POST['name'];
+                $update_price=$_POST['price'];
+                $update_img=$_POST['picture'];
+                $update_desc=$_POST['description'];
+                $update_product=$pdo->prepare("UPDATE products SET name= '$update_pro',price='$update_price',picture='$update_img',description='$update_desc' WHERE id='$pro_id'");
+            if($update_product->execute()){
+                echo "<script>alert('product updated successfully');</script>";
+                echo "<script>window.open('index.php?viewall_prod','_self');</script>";
+            } } 
+             
 } }//end edit product
 
+//delete category
+
+function delete_cat(){
+   
+        include('includes/connect.php');
+        $delete_id=$_GET['delete_cat'];
+        $delete_cat=$pdo->prepare("DELETE FROM categories WHERE id='$delete_id'");
+        if($delete_cat->execute()){
+            echo "<script>alert('category deleted successfully');</script>";
+        }
+    }
+
+//end delete category
 ?>
 
