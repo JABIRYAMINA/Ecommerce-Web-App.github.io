@@ -10,9 +10,9 @@
                     <th>edit</th>
                     <th>delete</th>
                </tr>
-               <tr>
+              
                <?php include('functions/function.php');echo viewAllCat();?>
-               </tr>
+              
             </table>
         </form>
     <h3>Ajouter  catégoris</h3>

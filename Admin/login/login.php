@@ -1,26 +1,11 @@
 <?php
-session_start();
+
 include_once("../includes/header.php");
 include_once("../includes/connect.php");
 
 //check if user comming from HTTP post request
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $username = $_POST['user'];
-    $password = $_POST['pass'];
-    $hashedass = md5($password);
-    
-    //check if userexist in database
-  $stmt = $pdo->prepare("SELECT username,password FROM admins WHERE username = ? AND password = ?");
-  $stmt->execute(array($username, $hashedass));
-//
-$_SESSION['username'] = $username; //register session
-header('location:dashboard.php')
 
-
-        
-      
  
-}
 ?>
 
 
@@ -56,4 +41,3 @@ header('location:dashboard.php')
         </form>
     </div>
     </div>
-<?php include_once("../includes/header.php");?>

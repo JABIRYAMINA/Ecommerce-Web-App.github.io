@@ -1,8 +1,11 @@
 
- <?php
-include_once($tpl ."header.php");
 
-?>       
+<?php include('./includes/init.php');?>
+<?php
+
+include_once($tpl ."header.php");
+?>
+      
       <div class="container-fluid">
           <img src="assets/images/best-makeup-2017.webp" class="image">
           <h2 class="text-lg-center py-md-4 bg-light top-50">A PROPOS</h2>
@@ -60,6 +63,6 @@ include_once($tpl ."header.php");
 
 
 <?php
-include_once($tpl ."footer.php");
+include_once("includes/footer.php");
 
 ?>

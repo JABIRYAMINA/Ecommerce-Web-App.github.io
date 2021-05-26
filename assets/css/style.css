@@ -2,7 +2,9 @@ body{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-weight: 700;    }
+    font-weight: 700;  
+    
+  }
 
 
 /*card*/
@@ -15,50 +17,8 @@ body{
     padding-left:16px!important;
     padding-right:16px!important;
     color:white;
-    letter-spacing: 2px;}
-
-/*btn*/
-.btn-color{
-    background:#000;
-    color:grey;
+    letter-spacing: 2px;
 }
-.btn-color:hover{
-     color:#fff;
-}
-@keyframes slide-btn{
-    16%{
-        transform:translateY(8px);
-
-    }
-    33%{
-        transform:translateY(-6px);
-    }
-    50%{
-        transform:translateY(4px);
-    }
-    65%{
-        transform:translateY(-2px);
-    }
-    85%{
-        transform:translateY(1px);
-    }
-    100%{
-        transform:translateY(0px);
-    }
-}
-.slide-btn{
-    display:inline-block;
-    vertical-align: middle;
-    transform:perspective(1px) translateZ(0);
-    box-shadow: 0 0 0 1px rgb(0,0,0,0);
-}
-.slide-btn:hover,
-.slide-btn:focus,
-.slide-btn:active{
-    animation-name: slide-btn;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 1;}
 
     /*Navbar*/
 .my-bg{
@@ -116,8 +76,9 @@ button:hover{
     background-color: #3a3833;
 }
 /*latest product*/
-.img-fluid{
+ .img-fluid{
     margin-top:8rem;
+   
 }
 
 #new .one .details{
@@ -632,5 +593,9 @@ var {
     max-height: 75px;
     object-fit: cover;
 }
-/*login*/
+.picture{
+    width:200px;
+    height:100px;
+}
+
 

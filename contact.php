@@ -1,7 +1,8 @@
 
+
+<?php include('./includes/init.php');?>
 <?php
 include_once($tpl ."header.php");
-
 ?>
   <section>
 

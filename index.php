@@ -1,8 +1,10 @@
 
 <?php include('./includes/init.php');?>
 <?php
+include_once($tpl ."functions/function.php");
 include_once($tpl ."header.php");
 include_once($tpl ."connect.php");
+
 
 ?>
   <img name="slideshow" class="container-fluid py-5 slider ">
@@ -37,7 +39,7 @@ include_once($tpl ."connect.php");
   <!--nouveau produit-->
   <section id="new" class="w-100">
     <div class="row p-0 m-0 mt-5">
-      <h1 class="text-center">Latest product</h1>
+      <h1 class="text-center"></h1>
       <?php
             $sql = "SELECT * FROM products ORDER BY id DESC LIMIT 0, 3";
             $stmt = $pdo->prepare($sql);
@@ -47,13 +49,14 @@ include_once($tpl ."connect.php");
                 $product_title = $products['name'];
                 $product_detail = substr($products['description'], 0, 140);
                 $product_image = $products['picture'];
-                $product_price = $products['price'];
+                 $product_price = $products['price'];
         ?>
       <div class="one col-lg-4 col-md-12 col-12 p-0">
-        <img class="img-fluid" src="assets/images/PARFUM/Eau de Parfum Amber Elixir Mystery.Jpeg" name="images"alt="">
+     <?php echo " <img class='img-fluid lg'  src='admin/uploads/".$products['picture']."'alt='avatar'/>";?>
         <div class="details">
           <h2><?php echo $product_title; ?></h2>
           <p><?php echo $product_detail; ?></p>
+          <p><?php echo $product_price; ?></p>
           <button class="text-capitalize">Acheter</button>
         </div>
       </div>
@@ -64,13 +67,24 @@ include_once($tpl ."connect.php");
   </section>
   <section id="future" class="my-5 pb-5">
     <div class="container text-center mt-5 py-5">
-      <h3>Nouveau produit</h3>
+    
       <hr class="mx-auto">
-      <p></p>
+      <p>Nouveau produit</p>
     </div>
+    <?php
+            $row = "SELECT * FROM products ORDER BY id DESC LIMIT 4, 7";
+            $stmnt = $pdo->prepare($row);
+            $stmnt->execute();
+            while ($prod = $stmnt->fetch(PDO::FETCH_ASSOC)) :
+                $prod_id = $prod['id'];
+                $prod_title = $prod['name'];
+                $prod_detail = substr($products['description'], 0, 140);
+                $prod_image = $prod['picture'];
+                 $prod_price = $prod['price'];
+        ?>
     <div class="row mx-auto container-fluid">
-      <div class="product text-center col-lg-3 col-md-4 col-12">
-        <img class="img-fluid mb-3" src="assets/images/creme/Crème pour le Visage Riche en Vitamines E et B3.Jpeg" alt="">
+      <div class="product text-center col-lg-4 col-md-4 col-12">
+      <?php echo " <img class='img-fluid mb-3'  src='admin/uploads/".$prod['picture']."'alt='avatar'/>";?>
         <div class="star">
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
@@ -78,50 +92,12 @@ include_once($tpl ."connect.php");
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
         </div>
-        <h5 class="p-name">support boots</h5>
-        <h4 class=p-price>92 DH</h4>
+        <h5 class="p-name"><?php echo $prod_title; ?></h5>
+        <h4 class=p-price><?php echo $prod_price; ?></h4>
         <button class="buy-btn">Decouvrir</button>
       </div>
-      <div class="product text-center col-lg-3 col-md-4 col-12">
-        <img class="img-fluid mb-3" src="assets/images/creme/Lotion Gel Anti Âge Intense pour le Visage NovAge Men.Jpeg" alt="">
-        <div class="star">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <h5 class="p-name"></h5>
-        <h4 class=p-price>92 DH</h4>
-        <button class="buy-btn">Decouvrir</button>
-      </div>
-      <div class="product text-center col-lg-3 col-md-4 col-12">
-        <img class="img-fluid mb-3" src="assets/images/creme/Crème pour la Peau Sensible du Corps et du Visage Sun 360 IP 50.Jpeg" alt="">
-        <div class="star">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <h5 class="p-name">support boots</h5>
-        <h4 class=p-price>92 DH</h4>
-        <button class="buy-btn">Decouvrir</button>
-      </div>
-      <div class="product text-center col-lg-3 col-md-4 col-12">
-        <img class="img-fluid mb-3" src="assets/images/creme/Lotion Matifiante pour le Visage Love Nature à l'Extrait d'Arbre.Jpeg" alt="">
-        <div class="star">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <h5 class="p-name">support boots</h5>
-        <h4 class=p-price>92 DH</h4>
-        <button class="buy-btn">Decouvrir</button>
-      </div>
-    </div>
+      <?php endwhile; ?>
+     </div>
   </section>
   <section id="banner" class="my-5 py-5">
   <div class="container">

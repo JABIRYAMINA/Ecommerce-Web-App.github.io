@@ -9,7 +9,9 @@
             <th>description</th>
           
         </tr>
+     
         <?php include('functions/function.php'); echo viewAllProducts(); ?>
+       
     </table>
 </form>
 </div>

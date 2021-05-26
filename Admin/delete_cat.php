@@ -4,4 +4,9 @@
         echo delete_cat();
 
 }
+
+if(isset($_GET['delete_pro'])){
+    echo delete_product();
+
+}
 ?>

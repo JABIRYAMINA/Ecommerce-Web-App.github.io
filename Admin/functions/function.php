@@ -30,9 +30,9 @@ while($row=$fetch_pro->fetch()):
         <td>".$row['name']."</td>
         <td>".$row['price']."</td>
         <td><img src='uploads/".$row['picture']."'alt='avatar'/></td>
-        <td>".$row['description']."</td>
+        </div><td>".$row['description']."</td>
         <td><a href='index.php?edit_product=".$row['id']."'>Edit</a></td>
-        <td><a href='#'>Delete</a></td>
+        <td><a href='delete_cat.php?delete_pro=".$row['id']."'>Delete</a></td>
         </tr>";
 endwhile;
 }//end view all products
@@ -97,8 +97,8 @@ function edit_prod(){
                     </tr>
                     <tr>
                         <td>update  product name:</td>
-                        <td><input type='file' name='picture'  
-                        <img src='uploads/".$row['picture']."'/>
+                        <td><input type='file' name='picture'>  
+                        <img src='uploads/".$row['picture']."'>
                         </td>
                     </tr>
                         <td>update desc:</td>
@@ -110,7 +110,12 @@ function edit_prod(){
             if(isset($_POST['edit_product'])){
                 $update_pro=$_POST['name'];
                 $update_price=$_POST['price'];
-                $update_img=$_POST['picture'];
+                $update_img=$_FILES['picture']['name'];
+                $target='uploads/';
+                $file_path=$target.basename($_FILES['picture']['name']);
+                $file_tmp=$_FILES['picture']['tmp_name'];
+                $file_store='uploads/'.$ $update_img;
+                move_uploaded_file($file_tmp, $file_store);
                 $update_desc=$_POST['description'];
                 $update_product=$pdo->prepare("UPDATE products SET name= '$update_pro',price='$update_price',picture='$update_img',description='$update_desc' WHERE id='$pro_id'");
             if($update_product->execute()){
@@ -129,9 +134,23 @@ function delete_cat(){
         $delete_cat=$pdo->prepare("DELETE FROM categories WHERE id='$delete_id'");
         if($delete_cat->execute()){
             echo "<script>alert('category deleted successfully');</script>";
+            echo "<script>window.open('index.php?viewall_cat','_self');</script>";
         }
     }
-
 //end delete category
+
+//delete products
+
+function delete_product(){
+    include('includes/connect.php');
+    $delete_prod_id=$_GET['delete_pro'];
+    $delete_prod=$pdo->prepare("DELETE FROM products WHERE id='$delete_prod_id'");
+    if($delete_prod->execute()){
+        echo "<script>alert('product deleted successfully');</script>";
+        echo "<script>window.open('index.php?viewall_prod','_self');</script>";
+    }
+}
 ?>
+
+
 
