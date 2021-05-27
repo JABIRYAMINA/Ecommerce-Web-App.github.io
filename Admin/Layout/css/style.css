@@ -19,8 +19,9 @@ body{
     float:left;
     width:20rem;
     height:500px;
-    background-color: #900f90;
+    background-color: rgb(172, 168, 168);
     margin:20px;
+    margin-top:30px;
     border-radius:10px;
     color: white;
     

@@ -15,15 +15,15 @@
             <td><input type="texte" name="name"></td>
         </tr>
         <tr>
-            <td>Entrer product name:</td>
+            <td>Entrer prix:</td>
             <td><input type="texte" name="price"></td>
         </tr>
         <tr>
-            <td>Entrer product name:</td>
+            <td>Entrer image:</td>
             <td><input type="file" name="picture"></td>
         </tr>
       
-            <td>desc:</td>
+            <td>description:</td>
             <td><input type="texte" name="description"></td>
         </tr>
      
@@ -42,7 +42,7 @@ include('includes/connect.php');
         $target='uploads/';
         $file_path=$target.basename($_FILES['picture']['name']);
         $file_name=$_FILES['picture']['name'];
-         $file_tmp=$_FILES['picture']['tmp_name'];
+        $file_tmp=$_FILES['picture']['tmp_name'];
         $file_store='uploads/'.$file_name;
         move_uploaded_file($file_tmp, $file_store);
       

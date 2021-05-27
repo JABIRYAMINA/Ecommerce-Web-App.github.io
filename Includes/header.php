@@ -25,7 +25,7 @@ session_start();
 
   <nav class="navbar navbar-expand-lg navbar-light my-bg fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand text-white" href="home.php">
+      <a class="navbar-brand text-white" href="index.php">
         <img src="assets/images/logo.jpg" height="60px" width="75px">
         Emma cosmétiques
       </a>
@@ -41,7 +41,7 @@ session_start();
       <div class="collapse navbar-collapse" id="navbarRightAlignExample">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
           <li class="nav-item">
-            <a class="nav-link active text-white" aria-current="page" href="home.php">Home</a>
+            <a class="nav-link active text-white" aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="a-propos.php">A propos</a>
@@ -53,14 +53,12 @@ session_start();
             <a class="nav-link text-white" href="contact.php">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="signup.php">Inscrire</a>
+            <a class="nav-link text-white" href="admin/login/register.php">Inscrire</a>
           </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="admin/login.php">Login</a>
+            <a class="nav-link text-white" href="admin/login/login.php">Login</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="logout.php">logout</a>
-          </li>
+       
          
           <li class="nav-item">
             <div class="navbar-collapse collapse right">
@@ -80,7 +78,7 @@ session_start();
         </div>
             <a href="cart.php">
             <i class="fa fa-shopping-bag"></i>
-            <span>4 items in your cart</span>
+            <span></span>
           </a>
           </li>
     </div>
